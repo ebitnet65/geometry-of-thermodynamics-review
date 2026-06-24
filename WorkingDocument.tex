@@ -1,45 +1,8 @@
 \documentclass[twoside,twocolumn,9pt]{article}
-\usepackage{extsizes}
-\usepackage[super,sort&compress,comma]{natbib} 
-\usepackage[version=3]{mhchem}
-\usepackage[left=1.5cm, right=1.5cm, top=1.785cm, bottom=2.0cm]{geometry}
-\usepackage{balance}
-\usepackage{mathptmx}
-\usepackage{sectsty}
-\usepackage{graphicx} 
-\usepackage{lastpage}
-\usepackage[format=plain,justification=justified,singlelinecheck=false,font={stretch=1.125,small,sf},labelfont=bf,labelsep=space]{caption}
-\usepackage{float}
-\usepackage{fancyhdr}
-\usepackage{fnpos}
-\usepackage[english]{babel}
-\addto{\captionsenglish}{%
-  \renewcommand{\refname}{Notes and references}
-}
-\usepackage{array}
-\usepackage{droidsans}
-\usepackage{charter}
-\usepackage[T1]{fontenc}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{setspace}
-\usepackage[compact]{titlesec}
-\usepackage{hyperref}
-%%%Please don't disable any packages in the preamble, as this may cause the template to display incorrectly.%%%
+
+\input{Header}
 
 
-\usepackage{epstopdf}%This line makes .eps figures into .pdf - please comment out if not required.
-
-\definecolor{cream}{RGB}{222,217,201}
-
-%%%%%%%%% Preamble of the bibliography, can be commented or deleted 
-\def\bibpreamble{For the reference section, the style file \texttt{rsc.bst} can be used to generate the correct reference style.\footnotemark[4]
-\begin{enumerate}
-\item{Citations should appear here in the format A. Name, B. Name and C. Name, \emph{Journal Title}, 2000, \textbf{35}, 3523;} 
-\item{A. Name, B. Name and C. Name, \emph{Journal Title, 2000}, \textbf{35}, 3523.}
-\end{enumerate}
-... \\\\
-We encourage the citation of primary research over review articles, where appropriate, in order to give credit to those who first reported a finding. \href{https://www.rsc.org/news-events/articles/2020/jun/rsc-signs-dora/}{Find out more about our commitments to the principles of San Francisco Declaration on Research Assessment (DORA).}}
-%%%%%%%%% 
 
 \begin{document}
 
@@ -123,12 +86,19 @@ We encourage the citation of primary research over review articles, where approp
 \sffamily
 \begin{tabular}{m{4.5cm} p{13.5cm} }
 
-\includegraphics{head_foot/DOI} & \noindent\LARGE{\textbf{This is the title$^\dag$}} \\%Article title goes here instead of the text "This is the title"
+\includegraphics{head_foot/DOI} & \noindent\LARGE{
+\textbf{TITLE GOES HERE$^\dag$}
+} \\%Article title goes here instead of the text "This is the title"
 \vspace{0.3cm} & \vspace{0.3cm} \\
 
- & \noindent\large{Full Name,$^{\ast}$\textit{$^{a}$} Full Name,\textit{$^{b\ddag}$} and Full Name\textit{$^{a}$}} \\%Author names go here instead of "Full name", etc.
+ & \noindent
+ \large{Full Name,$^{\ast}$\textit{$^{a}$} 
+ Full Name,\textit{$^{b\ddag}$} 
+ and Full Name\textit{$^{a}$}} \\%Author names go here instead of "Full name", etc.
 
-\includegraphics{head_foot/dates} & \noindent\normalsize{The abstract should be a single paragraph which summarises the content of the article. Any references in the abstract should be written out in full \textit{e.g.}\ [Surname \textit{et al., Journal Title}, 2000, \textbf{35}, 3523].} \\%The abstrast goes here instead of the text "The abstract should be..."
+\includegraphics{head_foot/dates} & \noindent\normalsize{
+ABSTRACT GOES HERE
+} \\%The abstrast goes here instead of the text "The abstract should be..."
 
 \end{tabular}
 
@@ -182,8 +152,7 @@ Section headings can be typeset with and without numbers.\cite{Abernethy2003}
 
 \section*{Data availability}
 
-
-A data availability statement (DAS) is required to be submitted alongside all articles. Please read our \href{https://www.rsc.org/journals-books-databases/author-and-reviewer-hub/authors-information/prepare-and-format/data-sharing/#dataavailabilitystatements}{full guidance on data availability statements} for more details and examples of suitable statements you can use.
+%A data availability statement (DAS) is required to be submitted alongside all articles. Please read our \href{https://www.rsc.org/journals-books-databases/author-and-reviewer-hub/authors-information/prepare-and-format/data-sharing/#dataavailabilitystatements}{full guidance on data availability statements} for more details and examples of suitable statements you can use.
 
 \section*{Acknowledgements}
 The Acknowledgements come at the end of an article after Conflicts of interest and before the Notes and references.
@@ -198,7 +167,8 @@ The Acknowledgements come at the end of an article after Conflicts of interest a
 %\renewcommand\refname{Notes and references}
 
 %%%REFERENCES%%%
-\bibliography{bibliography/refs-local} %You need to replace "rsc" on this line with the name of your .bib file
+\bibliography{bibliography/pccp_response_geometry_master} 
+%You need to replace "rsc" on this line with the name of your .bib file
 \bibliographystyle{rsc} %the RSC's .bst file
 
 \end{document}
