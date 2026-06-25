@@ -1,0 +1,44 @@
+
+\begin{center}
+\begin{tikzpicture}[
+    node distance=2.6cm,
+    every node/.style={font=\small},
+    manifold/.style={draw, rounded corners, fill=white, align=center,
+                     minimum width=3.4cm, minimum height=1.0cm},
+    proj/.style={draw, rounded corners, fill=white, align=center,
+                 minimum width=2.6cm, minimum height=0.9cm},
+    arrow/.style={->, thick}
+]
+
+\node[manifold] (SV) {Thermodynamic\\manifold\\$(S,V)$};
+
+\node[proj, above right=1.1cm and 2.6cm of SV] (PV)
+{$(P,V)$\\projection};
+
+\node[proj, below right=1.1cm and 2.6cm of SV] (TS)
+{$(T,S)$\\projection};
+
+\draw[arrow] (SV) -- node[above, sloped] {$\pi_{PV}$} (PV);
+\draw[arrow] (SV) -- node[below, sloped] {$\pi_{TS}$} (TS);
+
+\node[align=center, right=1.6cm of PV] (omegaPV)
+{$dP\wedge dV$};
+
+\node[align=center, right=1.6cm of TS] (omegaTS)
+{$dT\wedge dS$};
+
+\draw[arrow] (PV) -- (omegaPV);
+\draw[arrow] (TS) -- (omegaTS);
+
+\node[align=center, below=1.0cm of SV] (pullback)
+{\(\pi_{PV}^{*}(dP\wedge dV)
+=
+\pi_{TS}^{*}(dT\wedge dS)
+=
+-U_{SV}\,dS\wedge dV\)};
+
+\draw[arrow] (omegaPV.south west) .. controls +(down:1.1cm) and +(right:1.0cm) .. (pullback.east);
+\draw[arrow] (omegaTS.north west) .. controls +(up:1.1cm) and +(right:1.0cm) .. (pullback.east);
+
+\end{tikzpicture}
+\end{center}

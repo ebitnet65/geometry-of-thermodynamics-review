@@ -1,0 +1,424 @@
+\section{Classical Thermodynamic Geometry}\label{sec:classical}
+
+Before the introduction of statistical mechanics or differential geometry, thermodynamics arose from an intensely practical problem: understanding the operation and limitations of heat engines. The industrial revolution transformed steam power into one of the dominant technologies of the nineteenth century, motivating fundamental questions concerning the conversion of heat into mechanical work. Carnot’s analysis of reversible cycles, later reformulated by Clausius, Kelvin, and Gibbs, established thermodynamics as a quantitative theory of energy transformation, efficiency, and response.
+
+From a modern perspective, it is striking that many of the central concepts of thermodynamics emerged not from the study of equilibrium states themselves but from the study of transformations between states. Heat capacities, compressibilities, expansion coefficients, and engine efficiencies all characterize how a system responds to changes in its environment. Long before the introduction of thermodynamic manifolds and geometric formalisms, thermodynamics was therefore fundamentally concerned with response.
+
+This perspective remains relevant today. While steam engines motivated the original development of thermodynamics, modern information technologies are similarly constrained by thermodynamic principles. The energetic cost of computation, information processing, communication, and quantum control all depend upon the response of physical systems to external driving. Concepts such as entropy production, thermodynamic length, and information geometry have consequently become increasingly important in fields ranging from machine learning and nanoscale devices to quantum technologies. In this sense, thermodynamics continues to serve as an organizing principle for successive technological revolutions, linking the steam engines of the Industrial Age to the information-processing systems of the twenty-first century.
+
+\subsection{Thermodynamic State Spaces}
+
+Classical thermodynamics is fundamentally a theory of states and transformations between them. The equilibrium condition of a macroscopic system may be specified by a set of extensive variables
+\begin{align}
+X^a=(S,V,N_1,N_2,\ldots),
+\end{align}
+which define points on a thermodynamic manifold. The fundamental relation
+\begin{align}
+U = U(S,V,N_1,N_2,\ldots)
+\end{align}
+then determines the equilibrium properties of the system and provides a complete thermodynamic description. In this sense, thermodynamics may be viewed as the study of a differentiable manifold embedded within a higher-dimensional space of thermodynamic variables.
+
+The differential structure of this manifold is encoded in the First Law,
+\begin{align}
+dU = T\,dS - P\,dV + \sum_i \mu_i\, dN_i,
+\end{align}
+which defines the conjugate intensive variables through
+\begin{align}
+T=\left(\frac{\partial U}{\partial S}\right){V,N},
+\qquad
+P=-\left(\frac{\partial U}{\partial V}\right){S,N},
+\qquad
+\mu_i=\left(\frac{\partial U}{\partial N_i}\right)_{S,V}.
+\end{align}
+The intensive variables therefore arise naturally as components of the gradient of the thermodynamic potential. Geometrically, they determine the local tangent structure of the equilibrium manifold and characterize the response of the system to infinitesimal changes in its state variables.
+
+This viewpoint was formalized by Gibbs and later generalized by Carathéodory through the introduction of thermodynamic surfaces and Pfaffian forms. Modern geometric treatments often regard the equilibrium manifold as a Legendre submanifold embedded within a higher-dimensional contact space whose coordinates are given by
+\begin{align}
+(U,S,V,N_i,T,-P,\mu_i).
+\end{align}
+Within this framework, the First Law appears as a contact one-form whose vanishing defines the equilibrium manifold. Legendre transformations correspond to changes of thermodynamic representation, while the physical content of thermodynamics remains invariant under such transformations.
+
+While these geometric constructions provide an elegant mathematical formulation of equilibrium thermodynamics, their physical significance lies in the relationships among neighboring states. Thermodynamic observables are rarely determined by a state alone; rather, they are inferred from how the system responds to perturbations. Temperature, pressure, compressibility, heat capacity, and susceptibility all characterize changes induced by variations of external constraints. Consequently, the geometry of thermodynamics is fundamentally tied not only to the structure of state space but also to the response connecting nearby states.
+
+This observation motivates a shift in perspective. Rather than viewing the thermodynamic manifold as a static collection of equilibrium states, one may regard it as the arena on which response is defined. From this standpoint, geometry emerges through the differential relations connecting neighboring states, and the central objects of interest become the response functions that characterize these relations. These response functions form the bridge between thermodynamic state spaces and the geometric structures developed throughout the remainder of this review.
+
+
+\subsection{Response Functions and Susceptibility Matrices}
+
+
+The local geometry of a thermodynamic manifold is determined by how a system responds to perturbations. In equilibrium thermodynamics, this information is encoded in the derivatives of the thermodynamic potentials and is quantified experimentally through response functions such as heat capacities, compressibilities, expansion coefficients, and magnetic susceptibilities. These quantities characterize the sensitivity of a system to changes in external constraints and provide the first indication that thermodynamic response possesses an intrinsic geometric structure.
+
+For a simple one-component fluid described by the fundamental relation
+\begin{align}
+U=U(S,V),
+\end{align}
+the differential response is determined by the Hessian matrix
+\begin{align}
+K_{ij}
+=
+\frac{\partial^2 U}
+{\partial X_i \partial X_j}
+=
+\begin{pmatrix}
+U_{SS} & U_{SV}\\
+U_{SV} & U_{VV}
+\end{pmatrix},
+\end{align}
+where $X=(S,V)$. The diagonal elements characterize the response of the system to changes in entropy and volume individually, while the off-diagonal element \(U_{SV}\) describes the coupling between thermal and mechanical degrees of freedom.
+
+The Hessian matrix plays a role analogous to a stiffness tensor in elasticity theory. Through the First Law, variations of the conjugate intensive variables may be expressed as
+\begin{align}
+\begin{pmatrix}
+dT\\
+-dP
+\end{pmatrix}
+=
+K
+\begin{pmatrix}
+dS \\  dV
+\end{pmatrix},
+\end{align}
+showing that the Hessian governs the linear response of the system near equilibrium. Stability requires that the quadratic form
+\begin{align}
+d^2U
+=
+U_{SS}dS^2
++
+2U_{SV}dS\,dV
++
+U_{VV}dV^2
+\end{align}
+be positive definite, implying that the susceptibility matrix contains direct information regarding thermodynamic stability.
+
+The entries of \(K\) are not independent. Because they originate from a state function, the mixed derivatives satisfy
+\begin{align}
+U_{SV}=U_{VS},
+\end{align}
+which is equivalent to a Maxwell relation. More generally, the familiar Maxwell identities arise as integrability conditions on the thermodynamic manifold and express the consistency of different response channels. Geometrically, they imply that equilibrium response is locally conservative and can be derived from a thermodynamic potential.
+
+The inverse matrix
+\begin{align}
+\chi = K^{-1}
+\end{align}
+contains the generalized susceptibilities and covariance relations of fluctuation theory. In experimental settings, these quantities correspond to measurable response functions such as
+\begin{align}
+C_V,
+\qquad
+\kappa_T,
+\qquad
+\alpha_P,
+\end{align}
+and their magnetic or chemical analogues. Near critical points, elements of the susceptibility matrix may diverge, signaling the growth of fluctuations and the emergence of long-range correlations.
+
+From the perspective developed here, the Hessian and susceptibility matrices provide more than a convenient representation of thermodynamic response. They define the local structure from which geometric descriptions emerge. The symmetric response encoded by these matrices gives rise naturally to metric structures associated with fluctuations, stability, and distinguishability. At the same time, the mixed-response terms characterize couplings between different thermodynamic coordinates and foreshadow the more general geometric structures associated with cyclic response and thermodynamic curvature.
+
+The central role of response matrices therefore extends beyond their traditional interpretation as collections of thermodynamic coefficients. They constitute the local differential structure of the thermodynamic manifold and provide the foundation upon which both metric and curvature-based descriptions of thermodynamic geometry are built.
+
+
+\subsection{Fluctuations and Metric Structure}
+
+\subsubsection{Einstein Fluctuation Theory.}
+
+The first indication that thermodynamics possesses an intrinsic geometric structure arises from the theory of equilibrium fluctuations. Classical thermodynamics describes equilibrium states through macroscopic variables such as entropy, volume, magnetization, or particle number, implicitly treating each equilibrium condition as a point on a thermodynamic manifold. Statistical mechanics reveals a more nuanced picture. Even in equilibrium, microscopic degrees of freedom continually fluctuate about their mean values, producing a distribution of nearby states whose structure reflects the underlying response properties of the system.
+
+A fundamental advance was made by Einstein, who recognized that the probability of observing a fluctuation away from equilibrium could be expressed directly in terms of the entropy. Consider a system described by a set of thermodynamic coordinates
+\[
+X=(X_1,X_2,\ldots,X_n),
+\]
+with equilibrium values \(X^{(0)}\). The probability of observing a nearby fluctuation is given by
+\[
+P(X)
+\propto
+\exp\left[
+\frac{S(X)-S(X^{(0)})}{k_B}
+\right].
+\]
+This relation establishes a direct connection between entropy and probability, revealing that the local structure of the entropy surface determines the statistics of thermodynamic fluctuations.
+
+Throughout this review, Latin indices \(i,j,k,\ldots\) label coordinates on the thermodynamic manifold, while Greek indices \(\mu,\nu,\ldots\) are reserved for control parameters or external coordinates when needed. Unless otherwise noted, repeated indices are assumed to be summed according to the Einstein summation convention.
+
+To examine fluctuations near equilibrium, we expand the entropy as a Taylor series about the equilibrium point,
+\begin{align}
+S(X)
+=
+S_0
++
+\sum_i
+\left(
+\frac{\partial S}{\partial X_i}
+\right)_0
+\delta X_i
++
+\frac12
+\sum_{ij}
+\left(
+\frac{\partial^2 S}
+{\partial X_i\partial X_j}
+\right)_0
+\delta X_i\delta X_j
++\cdots ,
+\end{align}
+where \(\delta X_i = X_i-X_i^{(0)}\). Since the entropy is maximal at equilibrium, the linear terms vanish, leaving
+\[
+S(X)
+\approx
+S_0
++
+\frac{k_B}{2}
+g_{ij}\,
+\delta X_i\delta X_j ,
+\]
+with
+\[
+g_{ij}
+=
+-\frac{1}{k_B}
+\left(
+\frac{\partial^2 S}
+{\partial X_i\partial X_j}
+\right)_0 .
+\]
+Substituting this expression into the fluctuation probability yields
+\[
+P(\delta X)
+\propto
+\exp
+\left[
+-\frac12
+g_{ij}
+\delta X_i\delta X_j
+\right],
+\]
+demonstrating that equilibrium fluctuations are distributed according to a multivariate Gaussian whose covariance is determined by the inverse of the matrix \(g_{ij}\).
+
+The appearance of \(g_{ij}\) has a natural geometric interpretation. The quadratic form
+\[
+ds^2
+=
+g_{ij}\,
+dX_i dX_j
+\]
+defines a local measure of distinguishability between neighboring thermodynamic states. Large values of \(ds^2\) correspond to statistically unlikely fluctuations, while small values correspond to states that are difficult to distinguish through thermal fluctuations alone. In this way, the entropy Hessian induces a metric structure on the thermodynamic manifold.
+
+The physical significance of this metric becomes apparent through the fluctuation-response relation. The covariance matrix satisfies
+\[
+\langle
+\delta X_i \delta X_j
+\rangle
+=
+(g^{-1})_{ij},
+\]
+showing that the metric and the susceptibility matrix contain equivalent information. Directions in state space associated with large fluctuations correspond to enhanced response, while directions associated with small fluctuations correspond to rigidity and stability. The metric therefore does not merely characterize statistical uncertainty; it encodes the local response properties of the system.
+
+From the perspective developed in this review, Einstein fluctuation theory provides the first explicit connection between response and geometry. The geometric structure is not imposed upon thermodynamics through an abstract mathematical construction. Rather, geometry emerges because fluctuations measure response. The metric tensor reflects the local susceptibility of the system to perturbations and therefore constitutes a geometric representation of thermodynamic response. Although developed long before modern thermodynamic geometry, Einstein’s fluctuation theory already contains the essential ingredients of what would later become the metric sector of response geometry.
+
+As we shall see in the following sections, this fluctuation-derived metric structure reappears in the thermodynamic geometries of Weinhold and Ruppeiner, in Fisher information geometry, and in quantum information theory. In each case, the underlying principle remains the same: fluctuations define distinguishability, distinguishability defines geometry, and geometry encodes response. Later sections will show that equilibrium fluctuations reveal only one part of the story, namely the symmetric sector of response geometry. Cyclic processes and nonequilibrium transformations give rise to a complementary antisymmetric sector associated with work, transport, and curvature.
+
+
+\subsection{Cycles, Work, and Curvature}
+
+\subsubsection{Thermodynamic Cycles and Work.}
+
+While fluctuation theory reveals a metric structure associated with local response, the historical origins of thermodynamics point toward a complementary geometric perspective. The development of thermodynamics was motivated not by equilibrium states themselves, but by cyclic processes. Carnot’s analysis of heat engines focused on the conversion of heat into work during closed transformations in thermodynamic state space. The central quantity was therefore not the distance between neighboring states, but the work accumulated during a cycle.
+
+For a quasistatic cycle \(\mathcal{C}\), the mechanical work is
+\begin{equation}
+W_\mathcal{C}=\oint_\mathcal{C} P\,dV,
+\end{equation}
+while the reversible heat exchanged is
+\begin{equation}
+Q_\mathcal{C}=\oint_\mathcal{C} T\,dS.
+\end{equation}
+
+Unlike the response functions discussed in the previous section, these quantities depend explicitly on the path taken through state space. Thermodynamic cycles therefore probe aspects of response that cannot be captured by local fluctuations alone.
+
+\input{sections/CalloutBox1}
+
+\subsubsection{Differential Forms and Thermodynamic Response.}
+
+The geometric significance of thermodynamic cycles becomes apparent through Stokes’ theorem. Applying Stokes’ theorem to the work integral gives
+\begin{equation}
+W_\mathcal{C}
+=
+\oint_\mathcal{C} P\,dV
+=
+\int_{\Sigma}
+dP\wedge dV,
+\end{equation}
+where \(\Sigma\) is an oriented surface bounded by \(\mathcal{C}\). Similarly,
+\begin{equation}
+Q_\mathcal{C}
+=
+\oint_\mathcal{C} T\,dS
+=
+\int_{\Sigma}
+dT\wedge dS.
+\end{equation}
+Thus, work and reversible heat are naturally associated with two-forms rather than metrics. The accumulated response depends on an oriented area enclosed by a cycle rather than on a local distance between neighboring states.
+
+%---
+
+
+
+
+\subsubsection{Pullback Relation Between the \((P,V)\) and \((T,S)\) Area Forms.}
+
+The preceding discussion suggests that the familiar area laws in the \((P,V)\) and \((T,S)\) planes should be regarded as projections of a common geometric structure on the equilibrium thermodynamic manifold. 
+Before proceeding, it is useful to understand why the \((P,V)\) and \((T,S)\) area laws are expected to be related at all. The underlying reason is that both descriptions originate from the same thermodynamic potential. For a simple compressible system,
+\[
+dU
+=
+T\,dS
+-
+P\,dV,
+\]
+and therefore the intensive variables \(T\) and \(P\) are not independent quantities but derivatives of a single state function \(U(S,V)\). The exactness of \(dU\) implies the Maxwell relation
+\[
+U_{SV}
+=
+U_{VS},
+\]
+which ensures consistency among the different thermodynamic representations. As shown below, this integrability condition is precisely what allows the area forms in the \((P,V)\) and \((T,S)\) planes to be identified as pullbacks of the same underlying two-form on the equilibrium manifold.
+We now make this statement explicit.
+
+Consider a simple compressible system in the energy representation,
+\begin{equation}
+U=U(S,V).
+\end{equation}
+The intensive variables are defined by
+\begin{equation}
+T=U_S,
+\qquad
+P=-U_V,
+\end{equation}
+where subscripts denote partial derivatives. The equilibrium manifold may therefore be parameterized by the coordinates \((S,V)\), while the maps
+\begin{equation}
+\pi_{PV}:(S,V)\mapsto \big(P(S,V),V\big)
+\end{equation}
+and
+\begin{equation}
+\pi_{TS}:(S,V)\mapsto \big(T(S,V),S\big)
+\end{equation}
+project the same thermodynamic surface into the \((P,V)\) and \((T,S)\) representations.
+
+We first consider the \((P,V)\) area form. Its pullback to the \((S,V)\) manifold is
+\begin{equation}
+\pi_{PV}^{*}(dP\wedge dV)
+=
+dP(S,V)\wedge dV.
+\end{equation}
+Using \(P=-U_V\), we have
+\begin{equation}
+dP
+=
+-U_{SV}\,dS
+=
+U_{VV}\,dV.
+\end{equation}
+Therefore,
+\begin{align}
+\pi_{PV}^{*}(dP\wedge dV)
+&=
+\left(
+-U_{SV}\,dS
+=
+U_{VV}\,dV
+\right)
+\wedge dV \
+&=
+-U_{SV}\,dS\wedge dV,
+\end{align}
+since \(dV\wedge dV=0\).
+
+Similarly, the pullback of the \((T,S)\) area form is
+\begin{equation}
+\pi_{TS}^{*}(dT\wedge dS)
+=
+dT(S,V)\wedge dS.
+\end{equation}
+Using \(T=U_S\), we obtain
+\begin{equation}
+dT
+=
+U_{SS}\,dS
++
+U_{SV}\,dV.
+\end{equation}
+Thus,
+\begin{align}
+\pi_{TS}^{*}(dT\wedge dS)
+&=
+\left(
+U_{SS}\,dS
++
+U_{SV}\,dV
+\right)
+\wedge dS \\
+&=
+U_{SV}\,dV\wedge dS \\
+&=
+-U_{SV}\,dS\wedge dV.
+\end{align}
+The two pullbacks are therefore identical:
+\begin{equation}
+\boxed{
+\pi_{PV}^{*}(dP\wedge dV)
+=
+\pi_{TS}^{*}(dT\wedge dS)
+=
+-U_{SV},dS\wedge dV
+}.
+\end{equation}
+This result shows that the \((P,V)\) and \((T,S)\) area laws are not independent geometric constructions. They are different coordinate projections of the same thermodynamic two-form,
+\begin{equation}
+\Omega
+=
+-U_{SV},dS\wedge dV .
+\end{equation}
+The coefficient \(U_{SV}\) therefore plays the role of a local curvature density on the equilibrium manifold. For an infinitesimal cycle enclosing an oriented area element \(dS\wedge dV\), the accumulated work is governed by
+\begin{equation}
+\delta W
+=
+\Omega
+=
+-U_{SV}\,dS\wedge dV.
+\end{equation}
+For a small finite cycle \(\mathcal{C}=\partial\Sigma\),
+this becomes
+\begin{equation}
+W_\mathcal{C}
+=
+\int_{\Sigma}
+\Omega
+\approx
+-U_{SV}\mathrm{Area}(\Sigma),
+\end{equation}
+provided \(U_{SV}\) varies slowly over the surface \(\Sigma\). Cyclic work is thus determined locally by mixed thermodynamic response.
+A detailed derivation and discussion of the pullback construction may be found in Ref.~\cite{Bittner2026PREResponse}.
+
+This derivation identifies the equilibrium prototype of the curvature sector of response geometry. The metric sector discussed earlier describes local distinguishability and fluctuation response. The two-form \(\Omega\), by contrast, describes the oriented accumulation of work around closed paths. It is the classical thermodynamic analogue of a curvature form: a local object whose flux through a surface determines the response accumulated along its boundary.
+
+
+\subsection{Response Geometry in Equilibrium Thermodynamics}
+
+The developments presented in this section suggest a unifying interpretation of thermodynamic geometry. Although the geometric approaches introduced by Einstein, Weinhold, and Ruppeiner are often discussed separately from the geometric structure associated with thermodynamic cycles, both arise from the same underlying source: thermodynamic response.
+
+The metric structures derived from fluctuation theory characterize the local sensitivity of a system to perturbations. Through the fluctuation-response relation, susceptibilities, covariances, and statistical distinguishability become encoded within a symmetric metric tensor. This metric sector describes the local geometry of neighboring equilibrium states and provides a natural framework for understanding stability, fluctuations, and critical phenomena.
+
+The analysis of thermodynamic cycles reveals a complementary geometric structure. The work accumulated around a closed path is determined by a thermodynamic two-form whose local density is governed by mixed response. The pullback relation between the \((P,V)\) and \((T,S)\) area forms shows that cyclic work is ultimately a consequence of the exactness of the fundamental thermodynamic differential \(dU\). The resulting two-form characterizes the accumulation of response around closed paths and defines an antisymmetric geometric sector associated with work and transport.
+
+These observations motivate a broader geometric description in which thermodynamic response is characterized by both symmetric and antisymmetric structures,
+\begin{equation}
+\boxed{
+\mathcal{G}_{\mathrm{response}}
+=
+(g,\Omega).
+}
+\end{equation}
+Here \(g\) denotes the metric sector associated with fluctuations, susceptibilities, and distinguishability, while \(\Omega\) denotes the curvature sector associated with cyclic response and work accumulation. The two structures are complementary. The metric describes how neighboring states differ, whereas the curvature describes how response accumulates around closed transformations.
+
+From this perspective, equilibrium thermodynamics already contains the essential ingredients of a response geometry. Geometry is not introduced as an external mathematical framework imposed upon thermodynamics. Rather, it emerges naturally from the measurable response properties of matter. Fluctuations generate a metric structure, while cycles generate a curvature structure. Together they provide a geometric description of equilibrium response that extends beyond the traditional focus on thermodynamic state variables alone.
+
+The significance of this decomposition extends far beyond equilibrium thermodynamics. Similar metric structures appear throughout information geometry, statistical inference, and quantum metrology, while analogous curvature structures arise in geometric phases, stochastic thermodynamics, transport theory, and open quantum systems. The equilibrium constructions developed here therefore serve as prototypes for a much broader class of geometric phenomena.
+
+Having established the equilibrium foundations of response geometry, we now turn to situations in which the metric sector becomes particularly prominent. Near critical points, fluctuations are amplified, susceptibilities diverge, and geometric structures become increasingly pronounced. These systems provide a natural setting in which to explore the relationship between response, fluctuations, and geometry in greater detail.

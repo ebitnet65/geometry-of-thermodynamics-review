@@ -87,18 +87,31 @@
 \begin{tabular}{m{4.5cm} p{13.5cm} }
 
 \includegraphics{head_foot/DOI} & \noindent\LARGE{
-\textbf{TITLE GOES HERE$^\dag$}
+\textbf{A manifesto on Geometry of Thermodynamic Response$^\dag$}
 } \\%Article title goes here instead of the text "This is the title"
 \vspace{0.3cm} & \vspace{0.3cm} \\
-
  & \noindent
- \large{Full Name,$^{\ast}$\textit{$^{a}$} 
- Full Name,\textit{$^{b\ddag}$} 
- and Full Name\textit{$^{a}$}} \\%Author names go here instead of "Full name", etc.
+ \large{
+ Eric R. Bittner,$^{\ast}$\textit{$^{a}$} 
+ Carlos Silva-Acu\~na,\textit{$^{b\ddag}$} 
+ and a cast of thousands\textit{$^{a}$}}   \\%Author names go here instead of "Full name", etc.
 
 \includegraphics{head_foot/dates} & \noindent\normalsize{
-ABSTRACT GOES HERE
-} \\%The abstrast goes here instead of the text "The abstract should be..."
+
+\textbf{Overview of the intended review:}
+Geometry has emerged repeatedly throughout thermodynamics, statistical mechanics, and quantum theory, appearing in contexts ranging from equilibrium fluctuation theory and critical phenomena to stochastic thermodynamics, information geometry, synchronization, and open quantum systems. These developments are often treated as independent applications of geometric methods. In this review, we argue that they instead reflect a common underlying principle: geometry is not a property of thermodynamic states alone, but of how those states respond to perturbations, constraints, environmental interactions, and observation.
+
+We develop the concept of \emph{response geometry}, in which thermodynamic response is characterized by complementary symmetric and antisymmetric structures. The symmetric sector is associated with fluctuations, susceptibilities, stability, and statistical distinguishability, giving rise to thermodynamic, information-theoretic, and quantum metrics. The antisymmetric sector is associated with circulation, transport, irreversibility, and cyclic work, leading naturally to connections, curvature, geometric phases, and holonomy. From this perspective, fluctuations and work, information and transport, and equilibrium and nonequilibrium response emerge as different manifestations of a unified geometric framework.
+
+Beginning with the historical development of thermodynamics from heat engines and equilibrium state spaces, we examine the geometric foundations of response in classical thermodynamics, critical phenomena, and stochastic dynamics. We then discuss synchronization and collective behavior as examples of emergent response manifolds generated through interactions and dissipation. Connections to information geometry, thermodynamic length, and quantum Fisher metrics are reviewed, followed by recent developments in open quantum systems, nonequilibrium steady states, and geometric descriptions of work and transport. Finally, we consider observable-dependent thermodynamics and observational geometry, where geometric structure depends explicitly upon the relationship between dynamics and measurement.
+
+By synthesizing these diverse developments, we propose that response geometry provides a common language for thermodynamics across scales, linking the fluctuation theory of equilibrium systems to the nonequilibrium dynamics of complex classical and quantum matter. This viewpoint suggests new connections among thermodynamics, information theory, synchronization, and quantum technologies, while pointing toward a unified geometric theory of physical response.
+
+“Geometry is not a property of thermodynamic states alone, but of how those states respond”
+
+The examples surveyed in this review suggest that response geometry is not an auxiliary mathematical description but an organizing principle that transcends the microscopic details of individual physical systems. Equilibrium thermodynamics, statistical mechanics, open quantum systems, and nonlinear spectroscopy all admit formulations in terms of a common geometric language. From this perspective, geometry is not imposed upon thermodynamics; it is an intrinsic consequence of the structure of physical response.
+
+} \\
 
 \end{tabular}
 
@@ -116,32 +129,18 @@ ABSTRACT GOES HERE
 
 %%%FOOTNOTES%%%
 
-\footnotetext{\textit{$^{a}$~Address, Address, Town, Country. Fax: XX XXXX XXXX; Tel: XX XXXX XXXX; E-mail: xxxx@aaa.bbb.ccc}}
+\footnotetext{\textit{$^{a}$~University of Houston, Department of Physics, Houston, TX,  USA E-mail: ebittner@central.uh.edu}}
 \footnotetext{\textit{$^{b}$~Address, Address, Town, Country. }}
-
-%Please use \dag to cite the ESI in the main text of the article.
-%If you article does not have ESI please remove the the \dag symbol from the title and the footnotetext below.
-%\footnotetext{\dag~Supplementary Information available: [details of any supplementary information available should be included here]. See DOI: 10.1039/cXCP00000x/}
-%additional addresses can be cited as above using the lower-case letters, c, d, e... If all authors are from the same address, no letter is required
 
 \footnotetext{\dag~Additional footnotes to the title and authors can be included \textit{e.g.}\ `Present address:' or `These authors contributed equally to this work' as above using the symbols: \ddag, \textsection, and \P. Please place the appropriate symbol next to the author's name and include a \texttt{\textbackslash footnotetext} entry in the the correct place in the list.}
 
 
 %%%END OF FOOTNOTES%%%
 
-\section{Introduction}
-%%%MAIN TEXT%%%%
-The main text of the article\cite{Mena2000} should appear here.
-
-\subsection{This is the subsection heading style}
-Section headings can be typeset with and without numbers.\cite{Abernethy2003}
-
-\subsubsection{This is the subsubsection style.~~} These headings should end in a full point.  
-
-\paragraph{This is the next level heading.~~} For this level please use \texttt{\textbackslash paragraph}. These headings should also end in a full point.
-
-
-\section*{Conclusions}
+\input{sections/Introduction}
+\input{sections/ClassicalThermo}
+\input{sections/ResponseGeom}
+\input{sections/OpenQuantum}
 
 
 \section*{Author contributions}
@@ -155,7 +154,7 @@ Section headings can be typeset with and without numbers.\cite{Abernethy2003}
 %A data availability statement (DAS) is required to be submitted alongside all articles. Please read our \href{https://www.rsc.org/journals-books-databases/author-and-reviewer-hub/authors-information/prepare-and-format/data-sharing/#dataavailabilitystatements}{full guidance on data availability statements} for more details and examples of suitable statements you can use.
 
 \section*{Acknowledgements}
-The Acknowledgements come at the end of an article after Conflicts of interest and before the Notes and references.
+The Acknowledgements come at the end of an article after Conflicts of interest and before the Notes and references.  Gimme some money. Gimme some money!
 
 %%%END OF MAIN TEXT%%%
 

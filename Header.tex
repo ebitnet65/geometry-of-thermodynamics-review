@@ -29,3 +29,36 @@
 \usepackage{epstopdf}%This line makes .eps figures into .pdf - please comment out if not required.
 
 \definecolor{cream}{RGB}{222,217,201}
+
+%-----E R Bittner ADDONS---
+\usepackage{tikz}
+
+\usepackage[most]{tcolorbox}
+
+\usetikzlibrary{
+    arrows.meta,
+    positioning,
+    calc,
+    decorations.pathreplacing,
+    shapes.geometric
+}
+
+
+\usepackage[version=4]{mhchem}
+
+\usepackage{physics}      % derivatives, bras/kets, etc.
+\usepackage{bm}           % bold math
+\usepackage{mathtools}    % extensions to amsmath
+
+\newtcolorbox{geombox}{
+  enhanced,
+  colback=gray!10,
+  colframe=black,
+  boxrule=0.8pt,
+  arc=2mm,
+  left=2mm,
+  right=2mm,
+  top=1mm,
+  bottom=1mm,
+  fonttitle=\bfseries
+}
