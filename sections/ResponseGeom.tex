@@ -1003,6 +1003,7 @@ which differs from \(\Omega_{Th}\) only through the Jacobian
 relating derivatives with respect to \(T\) and \(\beta\).
 This is the quantity shown in
 Fig.~\ref{fig:cugeo3_response}.
+
 The construction developed here illustrates an important
 principle that extends well beyond the specific spin--Peierls
 model. The response geometry is not inherited directly from the
@@ -1024,6 +1025,7 @@ not only the explicit dependence of the free energy on the
 external control variables, but also the collective
 reorganization of the underlying spin, orbital, and lattice
 degrees of freedom.
+
 This distinction is central to the geometric framework developed
 throughout this review. Different physical systems may employ
 very different microscopic Hamiltonians and computational
@@ -1037,6 +1039,215 @@ it. Response geometry is therefore a property of the response
 manifold, not of the Hamiltonian from which that response is
 obtained.
 \input{sections/Figure4}
+
+\subsection{Rewrite: Phenomenological Spin--Peierls Model for \ce{CuGeO3}}
+As a second example of equilibrium response geometry, we consider
+a phenomenological spin--Peierls model motivated by \ce{CuGeO3}.
+Unlike the Ising model, where the response functions were obtained
+from Monte Carlo sampling of equilibrium fluctuations, the present
+calculation proceeds by constructing a microscopic free-energy model
+and differentiating the resulting thermodynamic potential. This
+provides a complementary route to response geometry: the response
+manifold is generated not from sampled covariances, but from a
+field- and temperature-dependent free-energy landscape.
+
+The model combines an SSH-like orbital band Hamiltonian with a
+phenomenological spin--Peierls order parameter. The total free energy
+is written as
+\begin{align}
+F(T,B)
+=
+F_{\rm band}(T,B)
++
+F_{\rm spin}(T,B)
++
+F_{\rm SP}(T,B).
+\end{align}
+The band contribution is obtained from a two-sublattice Bloch
+Hamiltonian with five real \(d\)-orbitals,
+\[
+(d_{xy},d_{yz},d_{xz},d_{x^2-y^2},d_{z^2}),
+\]
+including ligand-field splittings, spin--orbit coupling, Zeeman
+coupling, and an SSH-like hopping alternation. The local Hamiltonian
+has the form
+\begin{align}
+H_{\rm loc}
+=
+H_{\rm lf}
++
+\lambda_{\rm SO}\,\mathbf L\cdot\mathbf S
++
+\mu_B
+\left(
+k_{\rm orb}\mathbf L
++
+g_s\mathbf S
+\right)\cdot\mathbf B,
+\end{align}
+where the orbital angular momentum matrices are represented in the
+real \(d\)-orbital basis.
+The Bloch Hamiltonian is defined on a two-sublattice unit cell as
+\begin{align}
+\mathcal H(k)
+=
+\begin{pmatrix}
+H_{\rm loc} & Q(k)\\
+Q^\dagger(k) & H_{\rm loc}
+\end{pmatrix},
+\end{align}
+with
+\begin{align}
+Q(k)
+=
+T_1+T_2 e^{-ik},
+\qquad
+T_1=(1+\delta)T_0,
+\qquad
+T_2=(1-\delta)T_0.
+\end{align}
+Here \(T_0\) contains orbital-diagonal hopping amplitudes and selected
+inter-orbital hopping terms. The hopping dimerization is tied to the
+spin--Peierls order parameter through
+\begin{align}
+\delta_t(T,B)
+=
+\delta_{t0}\,\phi(T,B).
+\end{align}
+For eigenvalues \(\varepsilon_n(k)\) of \(\mathcal H(k)\), the band
+free energy is evaluated as
+\begin{align}
+F_{\rm band}
+=
+-\frac{1}{\beta}
+\frac{1}{N_k}
+\sum_{k,n}
+\ln
+\left[
+1+
+\exp\left(-\beta \varepsilon_n(k)\right)
+\right].
+\end{align}
+The spin--Peierls order parameter is introduced phenomenologically
+using a mean-field field-dependent transition temperature,
+\begin{align}
+T_{\rm SP}(B)
+=
+T_{\rm SP}^{0}
+\left[
+1-\left(\frac{B}{B_c}\right)^2
+\right],
+\end{align}
+and
+\begin{align}
+\phi(T,B)
+=
+\sqrt{1-\frac{T}{T_{\rm SP}(B)}}
+\sqrt{1-\left(\frac{B}{B_c}\right)^2},
+\end{align}
+for \(T<T_{\rm SP}(B)\) and \(|B|<B_c\), with
+\(\phi(T,B)=0\) otherwise. The corresponding spin--Peierls gap is
+\begin{align}
+\Delta_{\rm SP}(T,B)
+=
+\Delta_{\rm SP}^{0}\phi(T,B).
+\end{align}
+The spin excitation spectrum is modeled by
+\begin{align}
+E_0(k)
+=
+\sqrt{
+\Delta_{\rm SP}^2
++
+\epsilon_k^2
+},
+\qquad
+\epsilon_k
+=
+J_1\cos k+J_2\cos(2k),
+\end{align}
+with Zeeman-shifted branches
+\begin{align}
+E_{\pm}(k)
+=
+E_0(k)
+\pm
+g_s\mu_B B.
+\end{align}
+The spin contribution to the free energy is then
+\begin{align}
+F_{\rm spin}
+=
+\frac{1}{\beta}
+\frac{1}{N_k}
+\sum_k
+\left[
+\ln\left(1-e^{-\beta E_+(k)}\right)
++
+\ln\left(1-e^{-\beta E_-(k)}\right)
+\right].
+\end{align}
+Finally, a Landau-like stabilization term is included,
+\begin{align}
+F_{\rm SP}
+=
+-K_{\rm SP}
+\left(\Delta_{\rm SP}^{0}\right)^2
+\phi^2(T,B),
+\end{align}
+which favors the ordered spin--Peierls state below the transition
+line.
+
+The thermodynamic response functions are obtained by numerical
+differentiation of the resulting free energy. The magnetization proxy
+is
+\begin{align}
+m(T,B)
+=
+-
+\left(
+\frac{\partial F}{\partial B}
+\right)_T,
+\end{align}
+and the mixed thermal-field response is
+\begin{align}
+R_\beta(T,B)
+=
+\left(
+\frac{\partial m}{\partial\beta}
+\right)_B.
+\end{align}
+This is the response field plotted in
+Fig.~\ref{fig:cugeo3_response}. We also compute the magnetic
+susceptibility proxy
+\begin{align}
+\chi_B(T,B)
+=
+\left(
+\frac{\partial m}{\partial B}
+\right)_T.
+\end{align}
+A Widom-line-like crossover ridge is extracted by locating, at each
+fixed magnetic field, the temperature where the magnitude of the
+mixed response is maximal,
+\begin{align}
+T^\ast(B)
+=
+\operatorname*{arg\,max}_{T}
+\left|
+R_\beta(T,B)
+\right|.
+\end{align}
+The present calculation should be interpreted as a phenomenological
+spin--Peierls response model rather than a fully self-consistent
+minimization over the lattice distortion. The order parameter
+\(\phi(T,B)\) is specified by the mean-field ansatz above and then
+used to construct the band, spin, and Landau contributions to the
+free energy. The response geometry is inherited from the resulting
+thermodynamic potential \(F(T,B)\). Thus, as in the Ising model, the
+geometric quantities are properties of the response manifold, not of
+the microscopic Hamiltonian alone.
+
 
 \subsection{Summary}
 The examples considered in this section demonstrate that response geometry is independent of the computational framework used to obtain the thermodynamic potential. Whether reconstructed from equilibrium fluctuations or derived analytically from a microscopic free-energy functional, the same geometric structures emerge from the response manifold. This observation naturally raises the question of whether an analogous construction exists for systems that possess no equilibrium thermodynamic potential. The answer, developed in the following sections, is affirmative. In open quantum systems the free energy is replaced by the nonequilibrium steady-state density operator, and the exact differential of equilibrium thermodynamics gives way to a response one-form whose non-exactness generates an intrinsic curvature. The resulting framework may therefore be viewed as the quantum generalization of response geometry developed here.
