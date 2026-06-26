@@ -1,0 +1,799 @@
+\section{From Green--Kubo Response to Response Geometry}
+\label{sec:kubo_response_geometry}
+The preceding sections emphasized thermodynamic response as
+the origin of metric and curvature structures in equilibrium and
+near-critical systems. We now connect this viewpoint to the
+standard language of response theory. The purpose is not to
+replace Green--Kubo or nonlinear response theory, but to
+reinterpret them geometrically. Green functions, susceptibilities,
+response tensors, and nonlinear response functions remain the
+central physical objects. Response geometry emerges when one
+asks how these response objects themselves vary over a manifold
+of external controls.
+
+\subsection{Linear Response and Retarded Green Functions}
+Consider a system perturbed by a weak external field \(f(t)\)
+coupled to an operator \(B\),
+\begin{align}
+H(t)=H_0-f(t)B .
+\end{align}
+To first order in the perturbation, the induced change in the
+expectation value of an observable \(A\) is
+\begin{align}
+\delta\langle A(t)\rangle
+=
+\int_{-\infty}^{\infty}dt'\,
+\chi_{AB}(t-t')f(t'),
+\end{align}
+where causality requires \(\chi_{AB}(t-t')=0\) for
+\(t<t'\). In quantum mechanics the response function is the
+retarded Green function
+\begin{align}
+\chi_{AB}(t)
+=
+-\frac{i}{\hbar}\Theta(t)
+\langle [A(t),B(0)]\rangle_0 .
+\label{eq:kubo_response}
+\end{align}
+Equation~\eqref{eq:kubo_response} is the Kubo formula. It
+expresses a measurable susceptibility in terms of an equilibrium
+correlation function and therefore provides the microscopic
+origin of linear response.
+In frequency space,
+\begin{align}
+\delta\langle A(\omega)\rangle
+=
+\chi_{AB}(\omega)f(\omega),
+\end{align}
+so that the susceptibility is the linear map taking a perturbing
+field into an observable response. From the perspective of this
+review, this is the first geometric step: response is not simply a
+number, but a bilinear object relating a direction in perturbation
+space to a direction in observable space.
+
+\subsection{From Green--Kubo Response to Geometric Response Theory}
+\label{sec:GreenKuboGeometry}
+Linear response theory provides the natural starting point for a
+geometric description of thermodynamic and quantum response.
+Traditionally, the Green--Kubo formalism relates transport
+coefficients and susceptibilities to equilibrium correlation
+functions, while the fluctuation--dissipation theorem connects
+these response functions to spontaneous fluctuations in
+equilibrium. The geometric framework developed in this review
+extends this picture by showing that the response tensor naturally
+decomposes into reciprocal and nonreciprocal sectors, giving rise
+to a metric geometry associated with fluctuations and a curvature
+geometry associated with cyclic transport.
+Consider an open quantum system governed by the parameter-dependent
+Liouvillian
+%
+\begin{equation}
+\dot{\rho}
+=
+\mathcal L(\bm{\lambda})\rho,
+\end{equation}
+%
+with stationary state satisfying
+%
+\begin{equation}
+\mathcal L(\bm{\lambda})
+\rho_{\rm ss}
+=
+0.
+\end{equation}
+%
+For a family of control parameters
+$\bm{\lambda}=\{\lambda^\mu\}$,
+we define the generalized forces
+%
+\begin{equation}
+O_\mu
+=
+\frac{\partial H}
+{\partial\lambda^\mu},
+\end{equation}
+%
+and the corresponding response one-form
+%
+\begin{equation}
+A_\mu
+=
+\mathrm{Tr}
+\left(
+\rho_{\rm ss}
+O_\mu
+\right)
+=
+\langle O_\mu\rangle_{\rm ss}.
+\end{equation}
+%
+The exterior derivative of this one-form defines the response
+curvature,
+%
+\begin{equation}
+F_{\mu\nu}
+=
+\partial_\mu A_\nu
+-
+\partial_\nu A_\mu,
+\end{equation}
+%
+whose surface integral gives the geometric work accumulated over a
+closed quasistatic control cycle,
+%
+\begin{equation}
+W
+=
+\oint A
+=
+\iint_\Sigma
+F.
+\end{equation}
+To connect this geometric construction with response theory,
+differentiate the stationary-state condition,
+%
+\begin{equation}
+\mathcal L
+\rho_{\rm ss}
+=
+0,
+\end{equation}
+%
+to obtain
+%
+\begin{equation}
+\mathcal L
+\,
+\partial_\mu\rho_{\rm ss}
+=
+-
+(\partial_\mu\mathcal L)
+\rho_{\rm ss}.
+\end{equation}
+%
+Introducing the Drazin inverse of the Liouvillian,
+%
+\begin{equation}
+\mathcal L^+,
+\end{equation}
+%
+gives
+%
+\begin{equation}
+\partial_\mu\rho_{\rm ss}
+=
+-
+\mathcal L^+
+(\partial_\mu\mathcal L)
+\rho_{\rm ss}.
+\end{equation}
+For Hamiltonian control parameters,
+%
+\begin{equation}
+(\partial_\mu\mathcal L)\rho
+=
+-i
+[O_\mu,\rho],
+\end{equation}
+%
+and using the integral representation
+%
+\begin{equation}
+\mathcal L^+
+=
+-
+\int_0^\infty
+dt\,
+e^{\mathcal Lt},
+\end{equation}
+%
+one finds
+%
+\begin{equation}
+\partial_\mu\rho_{\rm ss}
+=
+-i
+\int_0^\infty
+dt\,
+e^{\mathcal Lt}
+[O_\mu,\rho_{\rm ss}],
+\end{equation}
+%
+so that
+%
+\begin{equation}
+\partial_\mu A_\nu
+=
+-i
+\int_0^\infty
+dt\,
+\mathrm{Tr}
+\left[
+O_\nu
+e^{\mathcal Lt}
+[O_\mu,\rho_{\rm ss}]
+\right].
+\end{equation}
+The quantum regression theorem identifies the Liouvillian
+propagator appearing above with experimentally accessible
+two-time correlation functions,
+%
+\begin{equation}
+\mathrm{Tr}
+\left[
+O_\nu
+e^{\mathcal Lt}
+(O_\mu\rho_{\rm ss})
+\right]
+=
+\langle
+O_\nu(t)
+O_\mu(0)
+\rangle_{\rm ss},
+\end{equation}
+%
+leading to
+%
+\begin{equation}
+\partial_\mu A_\nu
+=
+-i
+\int_0^\infty
+dt\,
+\langle
+[O_\nu(t),O_\mu(0)]
+\rangle_{\rm ss}.
+\end{equation}
+%
+The response curvature therefore becomes
+%
+\begin{equation}
+\boxed{
+F_{\mu\nu}
+=
+-i
+\int_0^\infty
+dt
+\left[
+\langle
+[O_\nu(t),O_\mu(0)]
+\rangle
+-
+\langle
+[O_\mu(t),O_\nu(0)]
+\rangle
+\right].
+}
+\label{eq:CurvatureCorrelation}
+\end{equation}
+Equation~(\ref{eq:CurvatureCorrelation}) establishes that the
+geometric curvature is the integrated antisymmetric correlation
+function of the generalized forces.
+This connection becomes particularly transparent upon introducing
+the retarded susceptibility,
+%
+\begin{equation}
+\chi_{\mu\nu}^{R}(t)
+=
+-i
+\theta(t)
+\langle
+[O_\mu(t),O_\nu(0)]
+\rangle,
+\end{equation}
+%
+whose zero-frequency limit is
+%
+\begin{equation}
+\chi_{\mu\nu}^{R}(0)
+=
+-i
+\int_0^\infty
+dt\,
+\langle
+[O_\mu(t),O_\nu(0)]
+\rangle.
+\end{equation}
+%
+The response curvature may therefore be written as
+%
+\begin{equation}
+\boxed{
+F_{\mu\nu}
+=
+\chi_{\nu\mu}^{R}(0)
+-
+\chi_{\mu\nu}^{R}(0),
+}
+\label{eq:CurvatureKubo}
+\end{equation}
+%
+showing that the curvature is precisely the antisymmetric
+zero-frequency response tensor.
+Equations~(\ref{eq:CurvatureCorrelation}) and
+(\ref{eq:CurvatureKubo}) suggest a natural geometric
+decomposition of response theory. The reciprocal sector of the
+response tensor is generated by the symmetric correlation
+functions,
+%
+\begin{equation}
+G_{\mu\nu}
+\sim
+\int_0^\infty
+dt\,
+\left\langle
+\{
+\delta O_\mu(t),
+\delta O_\nu(0)
+\}
+\right\rangle,
+\end{equation}
+%
+while the nonreciprocal sector is generated by the corresponding
+commutator correlations,
+%
+\begin{equation}
+F_{\mu\nu}
+\sim
+\int_0^\infty
+dt\,
+\left\langle
+[
+\delta O_\mu(t),
+\delta O_\nu(0)
+]
+\right\rangle.
+\end{equation}
+From this perspective, the Green--Kubo formalism naturally
+decomposes into two complementary geometric sectors. The symmetric
+sector determines a response metric that characterizes
+distinguishability, fluctuations, and susceptibility, while the
+antisymmetric sector determines a response curvature that
+characterizes circulation, geometric work, and nonreciprocal
+transport. Response geometry therefore extends the conventional
+fluctuation--dissipation theorem by recognizing that reciprocal
+and nonreciprocal response are complementary geometric
+manifestations of the same underlying correlation functions.
+
+
+\subsection{Reciprocity, Onsager Symmetry, and Geometric Response}
+\label{sec:ReciprocityGeometry}
+The preceding discussion shows that response functions admit a
+natural geometric interpretation. This perspective becomes
+particularly transparent when viewed through the lens of Onsager
+reciprocity. In systems satisfying microscopic reversibility, the
+static susceptibility is reciprocal,
+%
+\begin{equation}
+\chi_{\mu\nu}
+=
+\chi_{\nu\mu},
+\end{equation}
+%
+reflecting the underlying symmetry imposed by detailed balance.
+The response tensor is therefore entirely symmetric and may be
+identified with a Riemannian metric on the control manifold. The
+resulting geometry is one of distinguishability, fluctuations,
+and susceptibility, and corresponds to the familiar equilibrium
+geometries introduced by Weinhold and Ruppeiner.
+
+Away from equilibrium, however, microscopic reversibility need
+not hold. External driving, coherent environmental coupling,
+nonequilibrium steady states, or measurement backaction may all
+break reciprocity, producing an antisymmetric sector of the
+response tensor. Rather than viewing this contribution as a small
+correction to the reciprocal response, it is more natural to
+regard it as defining an independent geometric structure.
+
+Accordingly, we decompose the static response tensor into its
+symmetric and antisymmetric components,
+%
+\begin{equation}
+\chi_{\mu\nu}
+=
+G_{\mu\nu}
++
+F_{\mu\nu},
+\end{equation}
+%
+where
+%
+\begin{align}
+G_{\mu\nu}
+&=
+\frac12
+\left(
+\chi_{\mu\nu}
++
+\chi_{\nu\mu}
+\right),
+\\
+F_{\mu\nu}
+&=
+\frac12
+\left(
+\chi_{\mu\nu}
+-
+\chi_{\nu\mu}
+\right).
+\end{align}
+%
+The tensor $G_{\mu\nu}$ defines the reciprocal response metric,
+while $F_{\mu\nu}$ defines the antisymmetric response curvature.
+These objects are not introduced independently; they are simply
+the two irreducible components of the response tensor itself.
+This decomposition admits an equally natural interpretation in
+terms of correlation functions. As shown in the previous section,
+the symmetric sector is generated by the anticommutator
+correlations,
+%
+\begin{equation}
+G_{\mu\nu}
+\sim
+\int_0^\infty
+dt\,
+\left\langle
+\{
+\delta O_\mu(t),
+\delta O_\nu(0)
+\}
+\right\rangle,
+\end{equation}
+%
+while the antisymmetric sector is generated by the corresponding
+commutator correlations,
+%
+\begin{equation}
+F_{\mu\nu}
+\sim
+\int_0^\infty
+dt\,
+\left\langle
+[
+\delta O_\mu(t),
+\delta O_\nu(0)
+]
+\right\rangle.
+\end{equation}
+%
+The Green--Kubo formalism therefore naturally separates into two
+complementary geometric sectors: one associated with equilibrium
+fluctuations and reciprocal response, and the other associated
+with circulation, geometric work, and nonreciprocal transport.
+
+This viewpoint extends the traditional fluctuation--dissipation
+theorem. Rather than identifying response solely with
+susceptibility, it recognizes that response possesses both
+reciprocal and nonreciprocal components. The reciprocal sector
+determines distances on the control manifold through the response
+metric, while the antisymmetric sector determines the circulation
+of the response one-form through the curvature. Metric geometry
+and curvature geometry therefore emerge as complementary
+manifestations of the same underlying response tensor.
+
+From this perspective, the appearance of geometric curvature is
+not an abstract mathematical construction but the natural
+geometric signature of broken reciprocity. Equilibrium systems,
+for which Onsager symmetry is preserved, possess purely metric
+response geometries. Nonequilibrium systems acquire an additional
+antisymmetric sector whose integral over closed loops generates
+geometric work. The passage from equilibrium to nonequilibrium
+response may therefore be viewed as a transition from purely
+Riemannian geometry to a richer differential geometry in which
+metric and curvature coexist as complementary descriptors of
+physical response.
+
+\subsection{Reciprocity, Fluctuations, and the Symmetric Sector}
+
+In equilibrium, time-reversal symmetry and microscopic
+reversibility impose strong constraints on the response matrix.
+Onsager reciprocity relates cross-responses associated with
+thermodynamically conjugate fluxes and forces, while the
+fluctuation--dissipation theorem expresses dissipative response
+in terms of spontaneous equilibrium fluctuations. These results
+explain why equilibrium response matrices are commonly
+symmetric and why their symmetric sector is naturally connected
+to covariance, susceptibility, dissipation, and thermodynamic
+stability.
+This is the response-theory origin of the metric sector discussed
+earlier. The same object that appears experimentally as a
+susceptibility also appears statistically as a fluctuation and
+geometrically as a metric. In schematic form,
+\begin{align}
+\textrm{fluctuations}
+\quad\Longleftrightarrow\quad
+\textrm{linear response}
+\quad\Longleftrightarrow\quad
+\textrm{metric geometry}.
+\end{align}
+This equivalence underlies the Weinhold and Ruppeiner
+constructions, Fisher information geometry, thermodynamic
+length, and quantum Fisher metrics. In each case, the metric
+describes the local distinguishability or dissipative cost
+associated with nearby states or nearby control protocols.
+The Green--Kubo viewpoint also clarifies why equilibrium
+thermodynamic geometry is integrable. If the generalized forces
+are derivatives of a thermodynamic potential, the corresponding
+response matrix is a Hessian. Its mixed derivatives commute, and
+the antisymmetric sector vanishes. Equilibrium response is
+therefore locally reciprocal because it derives from an underlying
+state function.
+\subsection{Beyond Equilibrium: Antisymmetric Response}
+Away from equilibrium, the response matrix need not be purely
+symmetric. Persistent currents, broken detailed balance,
+dissipation, coherent driving, and environmental basis selection
+can all generate response components that are odd under
+exchange of control directions. Writing a local response tensor as
+\begin{align}
+\chi_{\mu\nu}
+=
+\frac{\partial A_\mu}{\partial\lambda^\nu},
+\end{align}
+we may decompose it into symmetric and antisymmetric parts,
+\begin{align}
+G_{\mu\nu}
+=
+\frac12
+\left(
+\chi_{\mu\nu}+\chi_{\nu\mu}
+\right),
+\qquad
+F_{\mu\nu}
+=
+\frac12
+\left(
+\chi_{\mu\nu}-\chi_{\nu\mu}
+\right).
+\label{eq:GF_decomp_kubo}
+\end{align}
+The symmetric part \(G_{\mu\nu}\) is the reciprocal response
+metric. It generalizes the fluctuation and friction tensors of
+equilibrium and near-equilibrium thermodynamics. The
+antisymmetric part \(F_{\mu\nu}\) is the nonreciprocal response
+curvature. It measures the failure of response to be integrable
+and governs the work or transport accumulated around closed
+cycles in control space.
+Thus the Green--Kubo framework naturally leads to the
+decomposition central to response geometry:
+\begin{align}
+\boxed{
+\textrm{response tensor}
+\quad
+\chi_{\mu\nu}
+=
+G_{\mu\nu}
++
+F_{\mu\nu}
+}
+\end{align}
+with the symmetric sector describing fluctuations,
+distinguishability, and reciprocal susceptibility, and the
+antisymmetric sector describing circulation, nonreciprocity, and
+holonomy.
+This distinction is especially important for nonequilibrium
+steady states. Generalized fluctuation--dissipation and
+Green--Kubo relations show that response in a nonequilibrium
+steady state may still be represented through correlation
+functions, but the correlations are no longer those of a detailed
+balance equilibrium ensemble. Additional terms associated with
+steady currents, entropy production, or local probability currents
+enter the response. In this sense, nonequilibrium response theory
+already contains the ingredients of curvature: the response
+depends on transport structure rather than on fluctuations alone.
+
+\subsection{Response of the Response}
+The geometric viewpoint requires one further step. Conventional
+response theory asks how an observable changes under an
+external perturbation,
+\begin{align}
+f
+\longmapsto
+\delta\langle A\rangle .
+\end{align}
+Response geometry asks how this response changes as the
+system itself is moved through a control manifold,
+\begin{align}
+\lambda
+\longmapsto
+\chi_{\mu\nu}(\lambda).
+\end{align}
+Geometry therefore arises from the response of the response.
+The hierarchy is
+\begin{align}
+\boxed{
+\mathcal L
+\;\longrightarrow\;
+G^R(t)
+\;\longrightarrow\;
+\chi_{\mu\nu}
+\;\longrightarrow\;
+(G_{\mu\nu},F_{\mu\nu})
+}
+\end{align}
+where the Liouvillian or Hamiltonian generates the dynamics,
+the retarded Green function encodes causal propagation, the
+susceptibility defines the local response tensor, and the
+symmetric and antisymmetric components define the metric and
+curvature sectors of response geometry.
+This hierarchy is the conceptual bridge between Kubo theory and
+the geometric formulation developed in the remainder of the
+review. The response tensor is not merely a collection of
+coefficients. It is a local geometric object on the control
+manifold. Its symmetric part defines a metric-like structure, its
+antisymmetric part defines a curvature-like structure, and its
+variation over parameter space defines the response landscape.
+\subsection{Nonlinear Response and Liouville Space}
+The same logic extends naturally to nonlinear spectroscopy. In
+optical response theory the macroscopic polarization is expanded
+in powers of the applied electric field,
+\begin{align}
+P(t)
+=
+P^{(1)}(t)
++
+P^{(2)}(t)
++
+P^{(3)}(t)
++\cdots .
+\end{align}
+For third-order spectroscopy,
+\begin{align}
+P^{(3)}(t)
+=
+\int_0^\infty dt_3
+\int_0^\infty dt_2
+\int_0^\infty dt_1\,
+R^{(3)}(t_3,t_2,t_1)
+E(t-t_3)
+E(t-t_3-t_2)
+E(t-t_3-t_2-t_1),
+\end{align}
+where \(R^{(3)}\) is a multi-time response function. In
+Liouville space this response is constructed from a sequence of
+field interactions and propagations under the system
+Liouvillian. The familiar double-sided Feynman diagrams of
+nonlinear spectroscopy are therefore a pathway decomposition of
+the same causal response structure.
+This observation prepares the transition to observational
+geometry. In ordinary nonlinear spectroscopy the Liouvillian is
+held fixed while the optical field is treated perturbatively. In
+response geometry, the Liouvillian itself becomes a
+parameter-dependent object. The perturbation is no longer only
+the electric field, but motion through the manifold of dynamical
+generators. This shift converts nonlinear spectroscopy from a
+calculation of response amplitudes into a probe of Liouville-space
+transport.
+The following sections develop this idea explicitly for open
+quantum systems. The response tensor constructed from
+stationary-state expectation values yields the intrinsic metric and
+curvature fields. The Liouvillian formulation then supplies the
+connection and curvature governing pathway transport. Finally,
+nonlinear spectroscopy observes a projection of this transport
+through a chosen measurement channel, giving rise to the
+observable bundle and observational holonomy.
+
+
+\subsection{Quantum Regression and Liouville-Space Response}
+\label{subsec:qrt_response}
+The Green--Kubo formulation expresses linear response in terms
+of equilibrium two-time correlation functions. For open quantum
+systems, the corresponding object is not a Hamiltonian
+propagator but the Liouvillian propagator generated by the
+master equation. This connection is supplied by the quantum
+regression theorem.
+Consider a Markovian open quantum system whose reduced
+density operator evolves according to
+\begin{align}
+\frac{d\rho}{dt}
+=
+\mathcal L\rho .
+\end{align}
+If the same dynamical semigroup governs both the evolution of
+the density operator and the relaxation of conditional
+correlations, then the two-time correlation function may be
+written as
+\begin{align}
+\langle A(t)B(0)\rangle_{\rm ss}
+=
+{\rm Tr}
+\left[
+A e^{\mathcal L t}
+\left(
+B\rho_{\rm ss}
+\right)
+\right].
+\label{eq:QRT_two_time}
+\end{align}
+Equation~\eqref{eq:QRT_two_time} is the quantum regression
+theorem. It states that the same Liouvillian propagator that
+evolves the density matrix also propagates the operator-valued
+initial condition generated by the first measurement or field
+interaction.
+
+This result is central for the geometric formulation developed
+here. It means that experimentally accessible correlation
+functions inherit their parameter dependence from the
+Liouvillian itself. If
+\begin{align}
+\mathcal L=\mathcal L(\lambda),
+\end{align}
+then the response functions measured in spectroscopy are
+functions on the same Liouvillian control manifold:
+\begin{align}
+\langle A(t)B(0)\rangle_{\lambda}
+=
+{\rm Tr}
+\left[
+A e^{\mathcal L(\lambda)t}
+\left(
+B\rho_{\rm ss}(\lambda)
+\right)
+\right].
+\end{align}
+Thus, the geometry of the Liouvillian is directly imprinted onto
+the geometry of measured response functions.
+
+The same structure extends to multi-time correlations. For
+three operators,
+\begin{align}
+\langle A(t_2+t_1)B(t_1)C(0)\rangle_{\rm ss}
+=
+{\rm Tr}
+\left[
+A e^{\mathcal L t_2}
+B e^{\mathcal L t_1}
+\left(
+C\rho_{\rm ss}
+\right)
+\right],
+\end{align}
+with the ordering of operators and propagators determined by
+the experimental sequence. Higher-order nonlinear response
+functions are built from the same ingredients: field-interaction
+superoperators separated by Liouvillian propagators. For
+example, a third-order optical response can be written
+schematically as
+\begin{align}
+R^{(3)}(t_3,t_2,t_1)
+=
+{\rm Tr}
+\left[
+\mu_-
+e^{\mathcal L t_3}
+\mu_\times
+e^{\mathcal L t_2}
+\mu_\times
+e^{\mathcal L t_1}
+\mu_\times
+\rho_{\rm ss}
+\right],
+\label{eq:R3_liouville_qrt}
+\end{align}
+where \(\mu_\times\rho=[\mu,\rho]\) denotes the
+light--matter interaction superoperator and \(\mu_-\) represents
+the detection projection.
+Equation~\eqref{eq:R3_liouville_qrt} shows why the Liouvillian
+rather than the Hamiltonian is the natural geometric object for
+spectroscopic response. The nonlinear signal is not determined
+only by eigenenergies or transition dipoles. It is determined by
+successive propagation through Liouville space. Consequently,
+any deformation of the Liouvillian deforms the entire
+multi-time response function.
+
+The quantum regression theorem therefore provides the
+mathematical bridge between conventional response theory and
+observational geometry. Kubo theory identifies response
+functions with correlation functions. The regression theorem
+identifies those correlation functions with Liouvillian
+propagation. Response geometry then studies how these
+Liouvillian propagators, and hence the measured response
+functions, change as the generator moves through a manifold of
+control parameters.
+
+Having established that spectroscopy measures functions built
+from \(e^{\mathcal L t}\), the next step is to ask how those
+functions change when \(\mathcal L\) is deformed. This is
+precisely the role of the Duhamel expansion.
+
+
+%-----
